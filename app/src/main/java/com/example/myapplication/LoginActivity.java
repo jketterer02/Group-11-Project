@@ -44,7 +44,8 @@ public class LoginActivity extends AppCompatActivity
     {
         signin_button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
                 Toast.makeText(getApplicationContext(), "Login button pressed", Toast.LENGTH_LONG).show();
             }
         });

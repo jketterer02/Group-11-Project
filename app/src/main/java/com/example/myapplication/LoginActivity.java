@@ -67,7 +67,7 @@ public class LoginActivity extends AppCompatActivity
                 {
                     //Makes login button visible again
                     signin_button.setVisibility(View.VISIBLE);
-                    showMessage("Invalid Login Credentials");
+                    showMessage("Please Enter Login Credentials");
                 }
                 else
                 {

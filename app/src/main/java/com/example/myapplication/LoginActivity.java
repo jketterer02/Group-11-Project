@@ -23,8 +23,8 @@ import com.example.myapplication.databinding.ActivityLoginBinding;
 
 public class LoginActivity extends AppCompatActivity
 {
-    private EditText login_pass, login_email;
-    private Button login_button;
+    private EditText signin_pass, signin_email;
+    private Button signin_button;
     private TextView registerLink;
     private Intent homeintent;
 
@@ -32,26 +32,23 @@ public class LoginActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-
-        login_email = findViewById(R.id.login_email);
-        login_pass = findViewById(R.id.login_pass);
-        login_button = findViewById(R.id.login_button);
+        setContentView(R.layout.activity_login);
+        signin_email = findViewById(R.id.login_email);
+        signin_pass = findViewById(R.id.login_pass);
+        signin_button = findViewById(R.id.login_button);
         registerLink = findViewById(R.id.register_button);
         homeintent = new Intent(this, MainActivity.class);
         addListeners();
     }
     private void addListeners()
     {
-        login_button.setOnClickListener(new View.OnClickListener() {
+        signin_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showMessage("Hello World!");
+                Toast.makeText(getApplicationContext(), "Login button pressed", Toast.LENGTH_LONG).show();
             }
         });
     }
 
-    private void showMessage(String text)
-    {
-        Toast.makeText(getApplicationContext(), text, Toast.LENGTH_LONG).show();
-    }
+
 }

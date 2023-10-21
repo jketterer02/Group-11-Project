@@ -24,6 +24,7 @@ public class LoginActivity extends AppCompatActivity
     private Button signin_button;
     private TextView registerLink;
     private Intent homeintent;
+    private Intent registerintent;
     private FirebaseAuth auth;
 
     @Override
@@ -36,6 +37,8 @@ public class LoginActivity extends AppCompatActivity
         signin_pass = findViewById(R.id.login_pass);
         signin_button = findViewById(R.id.login_button);
         registerLink = findViewById(R.id.createaccount_button);
+        homeintent = new Intent(this,MainActivity.class);
+        registerintent = new Intent(this, RegisterActivity.class);
         //Creates an instance of a firebaseauth that we can use to call the firebase API
         auth = FirebaseAuth.getInstance();
 
@@ -71,7 +74,8 @@ public class LoginActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                setContentView(R.layout.activity_register);
+                startActivity(registerintent);
+                finish();
             }
         });
     }
@@ -92,7 +96,8 @@ public class LoginActivity extends AppCompatActivity
                 if(task.isSuccessful())
                 {
                     //redirects to main activity
-                    setContentView(R.layout.activity_main);
+                    startActivity(homeintent);
+                    finish();
                 }
                 else
                 {

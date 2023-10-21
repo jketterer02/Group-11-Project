@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,8 +19,8 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class RegisterActivity extends AppCompatActivity {
     private EditText newemail, newpass, newconfirmpass, newname;
-    private Button createnewaccount;
-    private Intent homeintent;
+    private ImageButton createnewaccount, backtohome;
+    private Intent homeintent, loginintent;
     private TextView loginlink;
     private FirebaseAuth auth;
 
@@ -30,10 +31,12 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
         newemail = findViewById(R.id.createaccount_email);
         newname = findViewById(R.id.createname);
-        newpass = findViewById(R.id.createaccount_pass);
-        newconfirmpass = findViewById(R.id.createaccount_confirmpass);
+        newpass = findViewById(R.id.createaccount_confirmpass);
+        newconfirmpass = findViewById(R.id.createaccount_pass);
         createnewaccount = findViewById(R.id.accountcreate_button);
+        backtohome = findViewById(R.id.back_button);
         homeintent = new Intent(this,MainActivity.class);
+        loginintent = new Intent(this,LoginActivity.class);
         //Creates an instance of a firebaseauth that we can use to call the firebase API
         auth = FirebaseAuth.getInstance();
         addListeners();
@@ -52,6 +55,14 @@ public class RegisterActivity extends AppCompatActivity {
                 {
                     registeruser(email,pass);
                 }
+            }
+        });
+        backtohome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                startActivity(loginintent);
+                finish();
             }
         });
 

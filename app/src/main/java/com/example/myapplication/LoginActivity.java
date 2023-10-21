@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,8 +22,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class LoginActivity extends AppCompatActivity
 {
     private EditText signin_pass, signin_email;
-    private Button signin_button;
-    private TextView registerLink;
+    private ImageButton signin_button, registerLink;
     private Intent homeintent;
     private Intent registerintent;
     private FirebaseAuth auth;
@@ -36,7 +36,7 @@ public class LoginActivity extends AppCompatActivity
         signin_email = findViewById(R.id.login_email);
         signin_pass = findViewById(R.id.login_pass);
         signin_button = findViewById(R.id.login_button);
-        registerLink = findViewById(R.id.createaccount_button);
+        registerLink = findViewById(R.id.register_button);
         homeintent = new Intent(this,MainActivity.class);
         registerintent = new Intent(this, RegisterActivity.class);
         //Creates an instance of a firebaseauth that we can use to call the firebase API

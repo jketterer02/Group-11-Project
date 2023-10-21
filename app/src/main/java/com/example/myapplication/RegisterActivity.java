@@ -17,7 +17,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class RegisterActivity extends AppCompatActivity {
-    private EditText newemail, newpass, newconfirmpass;
+    private EditText newemail, newpass, newconfirmpass, newname;
     private Button createnewaccount;
     private Intent homeintent;
     private TextView loginlink;
@@ -29,6 +29,7 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         newemail = findViewById(R.id.createaccount_email);
+        newname = findViewById(R.id.createname);
         newpass = findViewById(R.id.createaccount_pass);
         newconfirmpass = findViewById(R.id.createaccount_confirmpass);
         createnewaccount = findViewById(R.id.accountcreate_button);

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterActivity">
+
+    <Button
+        android:id="@+id/accountcreate_button"
+        android:layout_width="175dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="118dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="118dp"
+        android:layout_marginBottom="280dp"
+        android:text="Register Account"
+        android:textColorLink="#815FBD"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/createaccount_pass" />
+
+    <EditText
+        android:id="@+id/createaccount_pass"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="81dp"
+        android:layout_marginBottom="21dp"
+        android:ems="10"
+        android:hint="confirm password"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/accountcreate_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/createaccount_confirmpass" />
+
+    <EditText
+        android:id="@+id/createaccount_confirmpass"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="81dp"
+        android:layout_marginBottom="12dp"
+        android:ems="10"
+        android:hint="password"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/createaccount_pass"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/createaccount_email" />
+
+    <EditText
+        android:id="@+id/createaccount_email"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="196dp"
+        android:layout_marginEnd="81dp"
+        android:layout_marginBottom="8dp"
+        android:ems="10"
+        android:hint="email account"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toTopOf="@+id/createaccount_confirmpass"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="155dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginTop="95dp"
+        android:layout_marginEnd="128dp"
+        android:layout_marginBottom="74dp"
+        android:text="Create Account"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toTopOf="@+id/createaccount_email"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

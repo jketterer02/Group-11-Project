@@ -5,7 +5,6 @@ import android.os.Bundle;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.snackbar.Snackbar;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,13 +15,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.core.view.WindowCompat;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
-
-import com.example.myapplication.databinding.ActivityLoginBinding;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -43,9 +35,7 @@ public class LoginActivity extends AppCompatActivity
         signin_email = findViewById(R.id.login_email);
         signin_pass = findViewById(R.id.login_pass);
         signin_button = findViewById(R.id.login_button);
-        registerLink = findViewById(R.id.register_button);
-        homeintent = new Intent(this, MainActivity.class);
-        //registerintent = new Intent(this, RegisterActivity.class);
+        registerLink = findViewById(R.id.createaccount_button);
         //Creates an instance of a firebaseauth that we can use to call the firebase API
         auth = FirebaseAuth.getInstance();
 
@@ -79,10 +69,9 @@ public class LoginActivity extends AppCompatActivity
         //Listener for clicking register link
         registerLink.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                //setContentView(R.layout.activity_register);
-                //startActivity(registerintent);
-                //finish();
+            public void onClick(View v)
+            {
+                setContentView(R.layout.activity_register);
             }
         });
     }
@@ -103,9 +92,7 @@ public class LoginActivity extends AppCompatActivity
                 if(task.isSuccessful())
                 {
                     //redirects to main activity
-                    //setContentView(R.layout.activity_main);
-                    startActivity(homeintent);
-                    finish();
+                    setContentView(R.layout.activity_main);
                 }
                 else
                 {

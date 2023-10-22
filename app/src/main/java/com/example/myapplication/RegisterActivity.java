@@ -50,11 +50,10 @@ public class RegisterActivity extends AppCompatActivity {
                 String email = newemail.getText().toString();
                 String pass = newpass.getText().toString();
                 String confirmpass = newconfirmpass.getText().toString();
+                //validation logic
                 if(email.isEmpty()||pass.isEmpty()||confirmpass.isEmpty()) showMessage("Please Enter Login Credentials");
-                else
-                {
-                    registeruser(email,pass);
-                }
+                else if(!pass.equals(confirmpass)) showMessage("Please Confirm Password");
+                else registeruser(email,pass);
             }
         });
         backtohome.setOnClickListener(new View.OnClickListener() {

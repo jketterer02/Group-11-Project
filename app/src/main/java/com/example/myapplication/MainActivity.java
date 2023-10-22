@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -24,9 +25,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity
 {
-    private TextView tv;
-    FirebaseAuth auth;
-
+    private Intent profileintent;
     RecyclerView recyclerView;
     List<Article> articleList = new ArrayList<>();
     NewsRecyclerAdapter adapter;
@@ -37,8 +36,15 @@ public class MainActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        auth = FirebaseAuth.getInstance();
-        //tv = findViewById(R.id.tv);
+
+
+//        profileintent = new Intent(this,ProfileActivity.class);
+//        startActivity(profileintent);
+//        finish();
+
+        //  ^                                             ^
+        //  |  CODE ABOVE IS FOR TESTING PROFILE ACTIVITY |
+        //  |                                             |
 
         recyclerView = findViewById(R.id.news_recyclerView);
         progressIndicator = findViewById(R.id.progress_line);
@@ -51,10 +57,6 @@ public class MainActivity extends AppCompatActivity
     protected void onStart()
     {
         super.onStart();
-        FirebaseUser user = auth.getCurrentUser();
-
-        String email = user.getEmail();
-        //tv.setText(email);
     }
 
     void setupRecyclerView(){

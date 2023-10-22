@@ -96,6 +96,7 @@ public class LoginActivity extends AppCompatActivity
                 if(task.isSuccessful())
                 {
                     //redirects to main activity
+                    showMessage("Login Successful!");
                     startActivity(homeintent);
                     finish();
                 }

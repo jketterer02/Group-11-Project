@@ -81,7 +81,8 @@ public class RegisterActivity extends AppCompatActivity {
             {
                 if(task.isSuccessful())
                 {
-                    startActivity(homeintent);
+                    showMessage("Account Creation Successful!");
+                    startActivity(loginintent);
                     finish();
                 }
                 else showMessage(task.getException().getMessage());

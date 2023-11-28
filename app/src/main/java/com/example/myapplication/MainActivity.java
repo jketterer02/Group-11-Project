@@ -35,7 +35,7 @@ import com.kwabenaberko.newsapilib.models.response.ArticleResponse;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener
+public class MainActivity extends AppCompatActivity
 {
     private Intent profileintent;
     RecyclerView recyclerView;
@@ -82,9 +82,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //  |                                             |
 
 
-
+        /*
         recyclerView = findViewById(R.id.news_recyclerView);
         progressIndicator = findViewById(R.id.progress_line);
+
         searchView = findViewById(R.id.search_view);
         btn1 = findViewById(R.id.btn_1);
         btn2 = findViewById(R.id.btn_2);
@@ -118,6 +119,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setupRecyclerView();
         getNews("GENERAL", null);
 
+         */
+
     }
 
     private void replaceFragment(Fragment fragment) {
@@ -133,12 +136,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onStart();
     }
 
+    //Moved it to HomeFragment.java
+    /*
     void setupRecyclerView(){
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter = new NewsRecyclerAdapter(articleList);
         recyclerView.setAdapter(adapter);
     }
+     */
 
+    //Moved it to HomeFragment.java
+    /*
     void changeInProgress(boolean showChange){
         if(showChange)
             progressIndicator.setVisibility(View.VISIBLE);
@@ -146,6 +154,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             progressIndicator.setVisibility(View.INVISIBLE);
     }
 
+     */
+
+    //Moved it to HomeFragment.java
+    //This also has a search query so maybe move it to the SearchFragment.java
+    // Might have to remove the String query if moving it to the HomeFragment.java
+    /*
     void getNews(String category, String query){
         changeInProgress(true);
         NewsApiClient newsApiClient = new NewsApiClient("d70ae652c05b44ff97b52bd864da464c");
@@ -172,10 +186,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         );
     }
 
+     */
+    /*
+    //Moved it to HomeFragment.java
     @Override
     public void onClick(View v) {
         Button btn = (Button) v;
         String category = btn.getText().toString();
         getNews(category, null);
     }
+
+     */
 }

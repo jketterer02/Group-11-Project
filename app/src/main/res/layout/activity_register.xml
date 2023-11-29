@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/mobile_header_dark"
+    android:background="@drawable/registration_background"
     tools:context=".RegisterActivity">
 
     <EditText
@@ -12,115 +12,101 @@
         android:layout_width="249dp"
         android:layout_height="50dp"
         android:layout_marginStart="81dp"
-        android:layout_marginTop="20dp"
         android:layout_marginEnd="81dp"
-        android:layout_marginBottom="10dp"
         android:background="@drawable/white_bar"
         android:ems="10"
         android:hint="name"
         android:inputType="textEmailAddress"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/createaccount_email"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/createaccount_text" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.283" />
 
     <EditText
         android:id="@+id/createaccount_confirmpass"
         android:layout_width="249dp"
         android:layout_height="50dp"
         android:layout_marginStart="81dp"
-        android:layout_marginTop="10dp"
         android:layout_marginEnd="81dp"
-        android:layout_marginBottom="10dp"
         android:background="@drawable/white_bar"
         android:ems="10"
         android:hint="confirm password"
         android:inputType="textPassword"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/accountcreate_button"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/createaccount_pass" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.58" />
 
     <EditText
         android:id="@+id/createaccount_pass"
         android:layout_width="249dp"
         android:layout_height="50dp"
         android:layout_marginStart="81dp"
-        android:layout_marginTop="10dp"
         android:layout_marginEnd="81dp"
-        android:layout_marginBottom="10dp"
         android:background="@drawable/white_bar"
         android:ems="10"
         android:hint="password"
         android:inputType="textPassword"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/createaccount_confirmpass"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/createaccount_email" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.481" />
 
     <EditText
         android:id="@+id/createaccount_email"
         android:layout_width="249dp"
         android:layout_height="50dp"
         android:layout_marginStart="81dp"
-        android:layout_marginTop="10dp"
         android:layout_marginEnd="81dp"
-        android:layout_marginBottom="10dp"
         android:background="@drawable/white_bar"
         android:ems="10"
         android:hint="email account"
         android:inputType="textEmailAddress"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@id/createaccount_pass"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/createname" />
-
-    <TextView
-        android:id="@+id/createaccount_text"
-        android:layout_width="155dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="128dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="128dp"
-        android:layout_marginBottom="30dp"
-        android:text="Create Account"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintBottom_toTopOf="@id/createname"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.381" />
 
     <ImageButton
         android:id="@+id/accountcreate_button"
         android:layout_width="239dp"
         android:layout_height="65dp"
         android:layout_marginStart="86dp"
-        android:layout_marginTop="20dp"
         android:layout_marginEnd="86dp"
-        android:layout_marginBottom="276dp"
         android:src="@drawable/register_account_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/createaccount_confirmpass" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.71" />
 
     <ImageButton
         android:id="@+id/back_button"
         android:layout_width="77dp"
         android:layout_height="35dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="60dp"
         android:layout_marginBottom="672dp"
         android:scaleX=".80"
         android:scaleY=".80"
         android:src="@drawable/back_button"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/createaccount_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.011"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

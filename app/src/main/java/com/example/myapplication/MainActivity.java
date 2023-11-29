@@ -37,13 +37,14 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity
 {
-    private Intent profileintent;
-    RecyclerView recyclerView;
-    List<Article> articleList = new ArrayList<>();
-    NewsRecyclerAdapter adapter;
-    LinearProgressIndicator progressIndicator;
-    Button btn1,btn2,btn3,btn4,btn5,btn6,btn7;
-    SearchView searchView;
+    //DEPRECIATED
+    //private Intent profileintent;
+    //Button btn1,btn2,btn3,btn4,btn5,btn6,btn7;
+    //List<Article> articleList = new ArrayList<>();
+    //RecyclerView recyclerView;
+    //NewsRecyclerAdapter adapter;
+    //LinearProgressIndicator progressIndicator;
+    //SearchView searchView;
 
     ActivityMainBinding binding;
 

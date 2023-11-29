@@ -9,7 +9,7 @@
 
     <EditText
         android:id="@+id/createname"
-        android:layout_width="249dp"
+        android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="81dp"
         android:layout_marginEnd="81dp"
@@ -27,7 +27,7 @@
 
     <EditText
         android:id="@+id/createaccount_confirmpass"
-        android:layout_width="249dp"
+        android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="81dp"
         android:layout_marginEnd="81dp"
@@ -41,11 +41,11 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.58" />
+        app:layout_constraintVertical_bias="0.563" />
 
     <EditText
         android:id="@+id/createaccount_pass"
-        android:layout_width="249dp"
+        android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="81dp"
         android:layout_marginEnd="81dp"
@@ -59,11 +59,11 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.481" />
+        app:layout_constraintVertical_bias="0.468" />
 
     <EditText
         android:id="@+id/createaccount_email"
-        android:layout_width="249dp"
+        android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginStart="81dp"
         android:layout_marginEnd="81dp"
@@ -77,36 +77,35 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.381" />
+        app:layout_constraintVertical_bias="0.375" />
 
     <ImageButton
         android:id="@+id/accountcreate_button"
-        android:layout_width="239dp"
-        android:layout_height="65dp"
-        android:layout_marginStart="86dp"
-        android:layout_marginEnd="86dp"
+        android:layout_width="169dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="121dp"
+        android:layout_marginEnd="121dp"
         android:src="@drawable/register_account_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.71" />
+        app:layout_constraintVertical_bias="0.679" />
 
     <ImageButton
         android:id="@+id/back_button"
-        android:layout_width="77dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginBottom="672dp"
-        android:scaleX=".80"
-        android:scaleY=".80"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="295dp"
+        android:backgroundTint="#EFF1F4"
         android:src="@drawable/back_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.011"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.051" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

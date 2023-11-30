@@ -63,6 +63,13 @@ public class AccountFragment extends Fragment {
         //sets the textviews to the user's current email and UID
         useremail.setText(user.getEmail());
         userID.setText(user.getUid());
+//        getCurrentProfilePicStorageRef().getDownloadUrl().addOnCompleteListener(task -> {
+//            if(task.isSuccessful())
+//            {
+//                Uri uri = task.getResult();
+//                profilepicture.setImageURI(uri);
+//            }
+//        });
 
         //adds the click listeners
         addListeners();
@@ -97,7 +104,7 @@ public class AccountFragment extends Fragment {
                     .addOnSuccessListener(task -> {
                 Toast.makeText(getActivity(), "Profile Picture Updated!", Toast.LENGTH_LONG).show();
             }).addOnFailureListener(exception -> {
-                        Toast.makeText(getActivity(), "Profile Picture Upload Failed: " + exception.getMessage(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(getActivity(), "Profile Picture Update Failed: " + exception.getMessage(), Toast.LENGTH_LONG).show();
                     });;
         }
     }

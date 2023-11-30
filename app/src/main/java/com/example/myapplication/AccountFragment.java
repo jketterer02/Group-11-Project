@@ -65,20 +65,23 @@ public class AccountFragment extends Fragment {
         profilepicture.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //profilepicture.setVisibility(View.INVISIBLE);
-                //test code
+                //creates the intent to the photo selection screen
                 Intent intent = new Intent(Intent.ACTION_PICK,MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                //starts the activity with the above intent
                 startActivityForResult(intent,3);
 
             }
         });
     }
 
+    //this code is depreciated but it's the only thing I can find that works
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if(resultCode== Activity.RESULT_OK && data!=null){
+            //puts the photo into a URI
             Uri selectedImage = data.getData();
+            //The imageview is set to the selected image
             profilepicture.setImageURI(selectedImage);
         }
     }

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
@@ -25,15 +26,23 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
 
 public class AccountFragment extends Fragment {
 
     private TextView useremail, userID;
     private ImageView profilepicture;
+    private Uri selectedImage;
+    StorageReference storageReference;
 
 
     @Override
@@ -73,16 +82,26 @@ public class AccountFragment extends Fragment {
             }
         });
     }
-
     //this code is depreciated but it's the only thing I can find that works
     @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+    public void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
         super.onActivityResult(requestCode, resultCode, data);
         if(resultCode== Activity.RESULT_OK && data!=null){
             //puts the photo into a URI
-            Uri selectedImage = data.getData();
+            selectedImage = data.getData();
             //The imageview is set to the selected image
             profilepicture.setImageURI(selectedImage);
+            storageReference =  getCurrentProfilePicStorageRef();
+            storageReference.putFile(selectedImage)
+                    .addOnSuccessListener(task -> {
+                Toast.makeText(getActivity(), "Profile Picture Updated!", Toast.LENGTH_LONG).show();
+            }).addOnFailureListener(exception -> {
+                        Toast.makeText(getActivity(), "Profile Picture Upload Failed: " + exception.getMessage(), Toast.LENGTH_LONG).show();
+                    });;
         }
     }
+    //creates the storage Reference to the current firebase picture
+    //the name of the reference is profile_pic, and the file inside is named the uid
+    public StorageReference getCurrentProfilePicStorageRef() {return FirebaseStorage.getInstance().getReference().child("profile_pic").child(FirebaseAuth.getInstance().getUid());}
 }

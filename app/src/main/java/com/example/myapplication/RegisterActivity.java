@@ -6,10 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -18,10 +16,9 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class RegisterActivity extends AppCompatActivity {
-    private EditText newemail, newpass, newconfirmpass, newname;
+    private EditText newemail, newpass, newconfirmpass;
     private ImageButton createnewaccount, backtohome;
-    private Intent homeintent, loginintent;
-    private TextView loginlink;
+    private Intent loginintent;
     private FirebaseAuth auth;
 
     @Override
@@ -30,12 +27,10 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         newemail = findViewById(R.id.createaccount_email);
-        newname = findViewById(R.id.createname);
         newpass = findViewById(R.id.createaccount_confirmpass);
         newconfirmpass = findViewById(R.id.createaccount_pass);
         createnewaccount = findViewById(R.id.accountcreate_button);
         backtohome = findViewById(R.id.back_button);
-        homeintent = new Intent(this,MainActivity.class);
         loginintent = new Intent(this,LoginActivity.class);
         //Creates an instance of a firebaseauth that we can use to call the firebase API
         auth = FirebaseAuth.getInstance();

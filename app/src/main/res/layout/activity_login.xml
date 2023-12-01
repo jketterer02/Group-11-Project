@@ -10,6 +10,19 @@
     tools:context=".LoginActivity">
 
     <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="126dp"
+        android:layout_height="44dp"
+        android:backgroundTint="@android:color/transparent"
+        android:src="@drawable/google_signup_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/login_button"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/register_button"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.662" />
+
+    <ImageButton
         android:id="@+id/login_button"
         android:layout_width="124dp"
         android:layout_height="64dp"
@@ -18,10 +31,10 @@
         android:src="@drawable/login_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintHorizontal_bias="0.428"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.482"
+        app:layout_constraintVertical_bias="0.499"
         tools:visibility="visible">
 
     </ImageButton>
@@ -35,10 +48,10 @@
         android:src="@drawable/register_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.285"
+        app:layout_constraintHorizontal_bias="0.428"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.665">
+        app:layout_constraintVertical_bias="0.818">
 
     </ImageButton>
 
@@ -55,9 +68,10 @@
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.374" />
+        app:layout_constraintVertical_bias="0.386" />
 
     <EditText
         android:id="@+id/login_email"
@@ -73,8 +87,9 @@
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.277" />
+        app:layout_constraintVertical_bias="0.289" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

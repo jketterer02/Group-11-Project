@@ -15,6 +15,7 @@ import android.widget.Button;
 import com.google.android.material.progressindicator.LinearProgressIndicator;
 import com.kwabenaberko.newsapilib.NewsApiClient;
 import com.kwabenaberko.newsapilib.models.Article;
+import com.kwabenaberko.newsapilib.models.request.EverythingRequest;
 import com.kwabenaberko.newsapilib.models.request.TopHeadlinesRequest;
 import com.kwabenaberko.newsapilib.models.response.ArticleResponse;
 
@@ -65,6 +66,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         changeInProgress(true);
         NewsApiClient newsApiClient = new NewsApiClient("d70ae652c05b44ff97b52bd864da464c");
         //Gets all of the Top Head Lines News from the U.S.
+        /*
         newsApiClient.getTopHeadlines(
                 new TopHeadlinesRequest.Builder().language("en").category(category).q(query).build(),
                 new NewsApiClient.ArticlesResponseCallback() {
@@ -85,6 +87,35 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                     }
                 }
         );
+        */
+
+        //Gets of all of the general news from given date up to current date and sort by articles by popularity.
+        //NOTE: Can only retrieve articles that were published from a month ago to now due to using free version of NEWS API.
+
+        newsApiClient.getEverything(
+                new EverythingRequest.Builder().language("en").q("general").from("2023-11-29").sortBy("popularity").build(),
+
+                new NewsApiClient.ArticlesResponseCallback() {
+                    @Override
+                    public void onSuccess(ArticleResponse response) {
+
+                        getActivity().runOnUiThread(()->{
+                            changeInProgress(false);
+                            articleList = response.getArticles();
+                            adapter.updateRecyclerView(articleList);
+                            adapter.notifyDataSetChanged();
+                        });
+
+                    }
+
+                    @Override
+                    public void onFailure(Throwable throwable) {
+                        Log.i("Failure!", throwable.getMessage());
+                    }
+                }
+
+        );
+
     }
 
     @Override

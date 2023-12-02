@@ -10,17 +10,17 @@
     tools:context=".LoginActivity">
 
     <ImageButton
-        android:id="@+id/imageButton3"
-        android:layout_width="126dp"
+        android:id="@+id/google_button"
+        android:layout_width="124dp"
         android:layout_height="44dp"
         android:backgroundTint="@android:color/transparent"
         android:src="@drawable/google_signup_button"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/login_button"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/register_button"
+        app:layout_constraintStart_toStartOf="@+id/login_button"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.662" />
+        app:layout_constraintVertical_bias="0.655" />
 
     <ImageButton
         android:id="@+id/login_button"
@@ -31,10 +31,10 @@
         android:src="@drawable/login_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499"
+        app:layout_constraintVertical_bias="0.52"
         tools:visibility="visible">
 
     </ImageButton>
@@ -43,15 +43,13 @@
         android:id="@+id/register_button"
         android:layout_width="124dp"
         android:layout_height="64dp"
-        android:layout_marginStart="140dp"
-        android:layout_marginEnd="140dp"
         android:src="@drawable/register_button"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.428"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/login_button"
+        app:layout_constraintHorizontal_bias="0.979"
+        app:layout_constraintStart_toStartOf="@+id/google_button"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.818">
+        app:layout_constraintVertical_bias="0.815">
 
     </ImageButton>
 
@@ -93,11 +91,17 @@
         app:layout_constraintVertical_bias="0.289" />
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
+        android:id="@+id/forgot_password"
+        android:layout_width="128dp"
+        android:layout_height="19dp"
+        android:fontFamily="@font/montserrat"
         android:text="Forgot Password?"
-        tools:layout_editor_absoluteX="83dp"
-        tools:layout_editor_absoluteY="200dp" />
+        android:textAlignment="center"
+        android:textColor="#FF0000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/register_button"
+        app:layout_constraintStart_toStartOf="@+id/login_button"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.449" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

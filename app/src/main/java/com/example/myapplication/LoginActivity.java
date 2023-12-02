@@ -21,7 +21,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class LoginActivity extends AppCompatActivity
 {
     private EditText signin_pass, signin_email;
-    private ImageButton signin_button, registerLink;
+    private ImageButton signin_button, registerLink, googlesignin;
     private TextView password_recovery;
     private Intent homeintent;
     private Intent registerintent;
@@ -33,11 +33,14 @@ public class LoginActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         //sets the content view to be the login activity, needed so the app doesn't instantly crash
         setContentView(R.layout.activity_login);
+        //sets xml elements into variables
         signin_email = findViewById(R.id.login_email);
         signin_pass = findViewById(R.id.login_pass);
         signin_button = findViewById(R.id.login_button);
         password_recovery = findViewById(R.id.forgot_password);
         registerLink = findViewById(R.id.register_button);
+        googlesignin = findViewById(R.id.google_button);
+        //Creates intents to use to change screens
         homeintent = new Intent(this,MainActivity.class);
         registerintent = new Intent(this, RegisterActivity.class);
         //Creates an instance of a firebaseauth that we can use to call the firebase API
@@ -86,6 +89,15 @@ public class LoginActivity extends AppCompatActivity
                 showMessage("Clicked Forgot Password Text");
             }
         });
+
+        googlesignin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showMessage("Clicked Google Signin Button");
+            }
+        });
+
+
     }
 
     //This method creates a Toast Notification with the specified text

@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.AuthResult;
@@ -21,6 +22,7 @@ public class LoginActivity extends AppCompatActivity
 {
     private EditText signin_pass, signin_email;
     private ImageButton signin_button, registerLink;
+    private TextView password_recovery;
     private Intent homeintent;
     private Intent registerintent;
     private FirebaseAuth auth;
@@ -34,6 +36,7 @@ public class LoginActivity extends AppCompatActivity
         signin_email = findViewById(R.id.login_email);
         signin_pass = findViewById(R.id.login_pass);
         signin_button = findViewById(R.id.login_button);
+        password_recovery = findViewById(R.id.forgot_password);
         registerLink = findViewById(R.id.register_button);
         homeintent = new Intent(this,MainActivity.class);
         registerintent = new Intent(this, RegisterActivity.class);
@@ -74,6 +77,13 @@ public class LoginActivity extends AppCompatActivity
             {
                 startActivity(registerintent);
                 finish();
+            }
+        });
+
+        password_recovery.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showMessage("Clicked Forgot Password Text");
             }
         });
     }

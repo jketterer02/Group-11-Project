@@ -103,9 +103,11 @@ public class LoginActivity extends AppCompatActivity
                     signin_button.setVisibility(View.VISIBLE);
                     //Creates a toast with the exception method upon failure
                     showMessage(task.getException().getMessage());
+
                 }
             }
         });
     }
 
 }
+

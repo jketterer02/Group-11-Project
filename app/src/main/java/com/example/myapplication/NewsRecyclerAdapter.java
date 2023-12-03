@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -57,11 +58,29 @@ public class NewsRecyclerAdapter extends RecyclerView.Adapter<NewsRecyclerAdapte
         TextView titleTextView;
         TextView sourceTextView;
         ImageView imageView;
+        ImageButton likebutton;
+        boolean liked = false;
         public NewsHolder(@NonNull View itemView) {
             super(itemView);
             titleTextView = itemView.findViewById(R.id.article_title);
             sourceTextView = itemView.findViewById(R.id.article_source);
             imageView = itemView.findViewById(R.id.article_image);
+            likebutton = itemView.findViewById(R.id.like_button);
+
+            likebutton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(liked)
+                    {
+                        likebutton.setImageResource(R.drawable.like_button);
+                    }
+                    else
+                    {
+                        likebutton.setImageResource(R.drawable.liked_button);
+                    }
+                    liked = !liked;
+                }
+            });
 
         }
     }

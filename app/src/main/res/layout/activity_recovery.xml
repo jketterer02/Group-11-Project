@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/recovery_background"
+    tools:context=".RecoveryActivity">
+
+    <ImageButton
+        android:id="@+id/r_back_button"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="295dp"
+        android:backgroundTint="#EFF1F4"
+        android:src="@drawable/back_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.039" />
+
+    <ImageButton
+        android:id="@+id/recover_button"
+        android:layout_width="169dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="121dp"
+        android:layout_marginEnd="121dp"
+        android:src="@drawable/recovery_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.395" />
+
+    <EditText
+        android:id="@+id/recovery_email"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="81dp"
+        android:layout_marginEnd="81dp"
+        android:background="@drawable/white_bar"
+        android:ems="10"
+        android:fontFamily="@font/montserrat"
+        android:hint="email account"
+        android:inputType="textEmailAddress"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.289" />
+</androidx.constraintlayout.widget.ConstraintLayout>

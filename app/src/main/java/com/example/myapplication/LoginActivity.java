@@ -23,8 +23,7 @@ public class LoginActivity extends AppCompatActivity
     private EditText signin_pass, signin_email;
     private ImageButton signin_button, registerLink, googlesignin;
     private TextView password_recovery;
-    private Intent homeintent;
-    private Intent registerintent;
+    private Intent homeintent, registerintent, recoveryintent;
     private FirebaseAuth auth;
 
     @Override
@@ -43,6 +42,7 @@ public class LoginActivity extends AppCompatActivity
         //Creates intents to use to change screens
         homeintent = new Intent(this,MainActivity.class);
         registerintent = new Intent(this, RegisterActivity.class);
+        recoveryintent = new Intent(this, RecoveryActivity.class);
         //Creates an instance of a firebaseauth that we can use to call the firebase API
         auth = FirebaseAuth.getInstance();
 
@@ -86,7 +86,8 @@ public class LoginActivity extends AppCompatActivity
         password_recovery.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showMessage("Clicked Forgot Password Text");
+                startActivity(recoveryintent);
+                finish();
             }
         });
 

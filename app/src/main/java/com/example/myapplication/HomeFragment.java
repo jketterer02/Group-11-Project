@@ -51,7 +51,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
     void setupRecyclerView(){
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        adapter = new NewsRecyclerAdapter(articleList);
+        adapter = new NewsRecyclerAdapter(articleList, requireContext());
         recyclerView.setAdapter(adapter);
     }
 

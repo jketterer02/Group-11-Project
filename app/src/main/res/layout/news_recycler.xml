@@ -59,11 +59,11 @@
                     android:layout_height="35dp"
                     android:backgroundTint="@android:color/transparent"
                     android:src="@drawable/like_button"
-                    app:layout_constraintEnd_toStartOf="@+id/like_counter"
+                    app:layout_constraintEnd_toStartOf="@+id/like_count"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/like_counter"
+                    android:id="@+id/like_count"
                     android:layout_width="50dp"
                     android:layout_height="24dp"
                     android:layout_marginTop="5dp"

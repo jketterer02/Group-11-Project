@@ -80,14 +80,16 @@ public class NewsRecyclerAdapter extends RecyclerView.Adapter<NewsRecyclerAdapte
                 // Get the current like count for the article from the HashMap
                 int currentLikeCount = likecounts.get(article.getUrl());
                 //if the holder was liked, unlike the button and decrease the like count, else like the button and increase the like count
-                if (holder.liked) {
+                if (holder.liked)
+                {
                     holder.likebutton.setImageResource(R.drawable.like_button);
                     likecounts.put(article.getUrl(), currentLikeCount - 1);
-                } else {
+                }
+                else
+                {
                     holder.likebutton.setImageResource(R.drawable.liked_button);
                     likecounts.put(article.getUrl(), currentLikeCount + 1);
                 }
-
                 //Update the like count TextView
                 holder.like_count.setText(String.valueOf(likecounts.get(article.getUrl())));
                 //flip the value of isliked
@@ -99,14 +101,16 @@ public class NewsRecyclerAdapter extends RecyclerView.Adapter<NewsRecyclerAdapte
     }
 
     //updates the list of articles
-    void updateRecyclerView(List<Article> data) {
+    void updateRecyclerView(List<Article> data)
+    {
         articleList.clear();
         articleList.addAll(data);
         initializeLikeCounts();
     }
 
     @Override
-    public int getItemCount() {
+    public int getItemCount()
+    {
         return articleList.size();
     }
 
@@ -129,12 +133,10 @@ public class NewsRecyclerAdapter extends RecyclerView.Adapter<NewsRecyclerAdapte
 
             likebutton.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View v) {
-                    if (liked) {
-                        likebutton.setImageResource(R.drawable.like_button);
-                    } else {
-                        likebutton.setImageResource(R.drawable.liked_button);
-                    }
+                public void onClick(View v)
+                {
+                    if (liked) likebutton.setImageResource(R.drawable.like_button);
+                    else likebutton.setImageResource(R.drawable.liked_button);
                     liked = !liked;
                 }
             });

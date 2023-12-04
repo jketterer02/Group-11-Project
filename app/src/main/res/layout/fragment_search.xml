@@ -37,6 +37,15 @@
                 android:id="@+id/search_view"/>
 
             <Button
+                android:id="@+id/btn_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:backgroundTint="@color/black"
+                android:fontFamily="@font/montserrat"
+                android:text="GENERAL" />
+
+            <Button
                 android:id="@+id/btn_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

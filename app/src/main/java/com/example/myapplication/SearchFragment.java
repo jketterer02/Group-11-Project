@@ -41,6 +41,7 @@ public class SearchFragment extends Fragment implements View.OnClickListener {
         View view = inflater.inflate(R.layout.fragment_search, container, false);
 
         searchView = (SearchView) view.findViewById(R.id.search_view);
+        btn1 = (Button) view.findViewById(R.id.btn_1);
         btn2 = (Button) view.findViewById(R.id.btn_2);
         btn3 = (Button) view.findViewById(R.id.btn_3);
         btn4 = (Button) view.findViewById(R.id.btn_4);
@@ -48,6 +49,7 @@ public class SearchFragment extends Fragment implements View.OnClickListener {
         btn6 = (Button) view.findViewById(R.id.btn_6);
         btn7 = (Button) view.findViewById(R.id.btn_7);
 
+        btn1.setOnClickListener(this);
         btn2.setOnClickListener(this);
         btn3.setOnClickListener(this);
         btn4.setOnClickListener(this);
@@ -57,7 +59,6 @@ public class SearchFragment extends Fragment implements View.OnClickListener {
 
         recyclerView = (RecyclerView) view.findViewById(R.id.news_recyclerView);
         progressIndicator = (LinearProgressIndicator) view.findViewById(R.id.progress_line);
-
 
         getNews("GENERAL",null);
 

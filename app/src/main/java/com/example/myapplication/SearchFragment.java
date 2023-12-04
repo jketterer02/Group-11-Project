@@ -88,14 +88,8 @@ public class SearchFragment extends Fragment implements View.OnClickListener {
         recyclerView.setAdapter(adapter);
     }
 
-    void changeInProgress(boolean showChange){
-        if(showChange)
-            progressIndicator.setVisibility(View.VISIBLE);
-        else
-            progressIndicator.setVisibility(View.INVISIBLE);
-    }
     void getNews(String category, String query){
-        changeInProgress(true);
+        progressIndicator.setVisibility(View.VISIBLE);
         NewsApiClient newsApiClient = new NewsApiClient("d70ae652c05b44ff97b52bd864da464c");
         //Gets all of the Top Head Lines News from the U.S.
         newsApiClient.getTopHeadlines(
@@ -105,7 +99,7 @@ public class SearchFragment extends Fragment implements View.OnClickListener {
                     public void onSuccess(ArticleResponse response) {
 
                         getActivity().runOnUiThread(()->{
-                            changeInProgress(false);
+                            progressIndicator.setVisibility(View.INVISIBLE);
                             articleList = response.getArticles();
                             adapter.updateRecyclerView(articleList);
                             adapter.notifyDataSetChanged();

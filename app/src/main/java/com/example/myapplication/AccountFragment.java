@@ -53,7 +53,7 @@ import java.util.List;
 public class AccountFragment extends Fragment {
 
     private TextView useremail, userID;
-    private ImageView profilepicture, signout_button, likes;
+    private ImageView profilepicture, signout_button, likes, goback;
     private Uri selectedImage;
 
     RecyclerView recyclerView;
@@ -79,6 +79,7 @@ public class AccountFragment extends Fragment {
         profilepicture = view.findViewById(R.id.pfp);
         signout_button = view.findViewById(R.id.sign_out_button);
         likes = view.findViewById(R.id.likelist);
+        goback = view.findViewById(R.id.imageView);
 
 
         //sets the textviews to the user's current email and UID
@@ -121,6 +122,10 @@ public class AccountFragment extends Fragment {
             getNews("GENERAL", null);
             recyclerView.setVisibility(View.VISIBLE);
         });
+        goback.setOnClickListener(v -> {
+            recyclerView.setVisibility(View.INVISIBLE);
+        });
+
     }
     //this code is depreciated but it's the only thing I can find that works
     @Override

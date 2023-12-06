@@ -39,7 +39,7 @@ import com.google.firebase.storage.StorageReference;
 public class AccountFragment extends Fragment {
 
     private TextView useremail, userID;
-    private ImageView profilepicture;
+    private ImageView profilepicture, signout_button;
     private Uri selectedImage;
 
 
@@ -57,6 +57,7 @@ public class AccountFragment extends Fragment {
         useremail = view.findViewById(R.id.Email);
         userID = view.findViewById(R.id.UID);
         profilepicture = view.findViewById(R.id.pfp);
+        signout_button = view.findViewById(R.id.sign_out_button);
 
         //sets the textviews to the user's current email and UID
         useremail.setText(user.getEmail());
@@ -80,6 +81,11 @@ public class AccountFragment extends Fragment {
             Intent intent = new Intent(Intent.ACTION_PICK,MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
             //starts the activity with the above intent
             startActivityForResult(intent,3);
+        });
+
+        signout_button.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), LoginActivity.class);
+            startActivity(intent);
         });
     }
     //this code is depreciated but it's the only thing I can find that works

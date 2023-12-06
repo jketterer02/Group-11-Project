@@ -10,11 +10,19 @@
     tools:context=".AccountFragment">
 
 
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/progress_line"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageButton
         android:id="@+id/sign_out_button"
         android:layout_width="110dp"
         android:layout_height="64dp"
-        android:layout_marginTop="176dp"
+        android:layout_marginTop="256dp"
         android:backgroundTint="@android:color/transparent"
         android:src="@drawable/sign_out_button"
         app:layout_constraintEnd_toEndOf="@+id/cardView"
@@ -82,12 +90,26 @@
             android:cropToPadding="true"
             android:src="@drawable/default_pfp" />
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="160dp"
-            android:layout_height="160dp"
-            android:src="@drawable/pfp_outline"
-            tools:visibility="visible" />
     </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:id="@+id/likelist"
+        android:layout_width="124dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="184dp"
+        android:src="@drawable/home_like_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/cardView"
+        app:layout_constraintStart_toStartOf="@+id/cardView"
+        tools:visibility="visible" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/news_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="377dp"
+        android:layout_marginTop="302dp"
+        android:background="@drawable/blank_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

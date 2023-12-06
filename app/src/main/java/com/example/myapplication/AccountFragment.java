@@ -1,16 +1,13 @@
 package com.example.myapplication;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import android.content.SharedPreferences;
 
 //import androidx.activity.result.ActivityResultLauncher;
 //
@@ -79,7 +76,7 @@ public class AccountFragment extends Fragment {
         profilepicture = view.findViewById(R.id.pfp);
         signout_button = view.findViewById(R.id.sign_out_button);
         likes = view.findViewById(R.id.likelist);
-        goback = view.findViewById(R.id.imageView);
+        goback = view.findViewById(R.id.exit_button);
 
 
         //sets the textviews to the user's current email and UID
@@ -97,6 +94,7 @@ public class AccountFragment extends Fragment {
 
         progressIndicator.setVisibility(View.INVISIBLE);
         recyclerView.setVisibility(View.INVISIBLE);
+        goback.setVisibility(View.INVISIBLE);
         //adds the click listeners
         addListeners();
 
@@ -121,9 +119,11 @@ public class AccountFragment extends Fragment {
             setupRecyclerView();
             getNews("GENERAL", null);
             recyclerView.setVisibility(View.VISIBLE);
+            goback.setVisibility(View.VISIBLE);
         });
         goback.setOnClickListener(v -> {
             recyclerView.setVisibility(View.INVISIBLE);
+            goback.setVisibility(View.INVISIBLE);
         });
 
     }

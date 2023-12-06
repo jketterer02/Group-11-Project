@@ -21,11 +21,13 @@ public class ViewNewsActivity extends AppCompatActivity {
     WebView webView;
     ImageView backbutton;
 
+    ImageView cardview;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_news);
-
+        cardview = findViewById(R.id.share_button);
         backbutton = findViewById(R.id.back_to_news);
 
         String URL = getIntent().getStringExtra("url");
@@ -48,6 +50,18 @@ public class ViewNewsActivity extends AppCompatActivity {
 
     private void addListeners()
     {
+        cardview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("text/plain");
+                String Body = " Download this App ";
+                String URL = getIntent().getStringExtra("url");
+                intent.putExtra(Intent.EXTRA_TEXT,Body);
+                intent.putExtra(Intent.EXTRA_TEXT, URL);
+                startActivity(Intent.createChooser(intent, " Share using "));
+            }
+        });
 
         //Listener for clicking back button
         backbutton.setOnClickListener(new View.OnClickListener() {

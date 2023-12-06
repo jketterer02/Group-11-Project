@@ -23,16 +23,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class HomeFragment extends Fragment implements View.OnClickListener {
+public class HomeFragment extends Fragment {
     RecyclerView recyclerView;
     List<Article> articleList = new ArrayList<>();
     NewsRecyclerAdapter adapter;
     LinearProgressIndicator progressIndicator;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
     }
 
     @Override
@@ -117,13 +116,5 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         );
 
     }
-
-    @Override
-    public void onClick(View v) {
-        Button btn = (Button) v;
-        String category = btn.getText().toString();
-        getNews(category, null);
-    }
-
 
 }

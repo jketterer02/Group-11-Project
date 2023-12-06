@@ -1,8 +1,10 @@
 package com.example.myapplication;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -69,18 +71,39 @@ public class RegisterActivity extends AppCompatActivity {
     //This method registers a user into firebase
     private void registeruser(String email, String pass)
     {
-        auth.createUserWithEmailAndPassword(email,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        //Creates the over 18 popup
+        AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
+        builder.setCancelable(true);
+        builder.setTitle("New User Age Verification");
+        builder.setMessage("Are you above the age of 18?");
+        //if you click no, the dialog is dismissed and shows a notification
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
             @Override
-            public void onComplete(@NonNull Task<AuthResult> task)
-            {
-                if(task.isSuccessful())
-                {
-                    showMessage("Account Creation Successful!");
-                    startActivity(loginintent);
-                    finish();
-                }
-                else showMessage(task.getException().getMessage());
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+                showMessage("User Accounts must be over 18");
             }
         });
+        //if you click yes, lets you register
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                auth.createUserWithEmailAndPassword(email,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task)
+                    {
+                        if(task.isSuccessful())
+                        {
+                            showMessage("Account Creation Successful!");
+                            startActivity(loginintent);
+                            finish();
+                        }
+                        else showMessage(task.getException().getMessage());
+                    }
+                });
+            }
+        });
+        builder.show();
     }
+
 }

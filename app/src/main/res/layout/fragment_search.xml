@@ -37,47 +37,67 @@
                 android:id="@+id/search_view"/>
 
             <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:id="@+id/btn_1"
-                android:layout_margin="6dp"
-                android:text="GENERAL"/>
-            <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:backgroundTint="@color/black"
+                android:fontFamily="@font/montserrat"
+                android:text="GENERAL" />
+
+            <Button
                 android:id="@+id/btn_2"
-                android:layout_margin="6dp"
-                android:text="BUSINESS"/>
-            <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:backgroundTint="@color/black"
+                android:fontFamily="@font/montserrat"
+                android:text="BUSINESS" />
+
+            <Button
                 android:id="@+id/btn_3"
-                android:layout_margin="6dp"
-                android:text="SPORTS"/>
-            <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:backgroundTint="@color/black"
+                android:fontFamily="@font/montserrat"
+                android:text="SPORTS" />
+
+            <Button
                 android:id="@+id/btn_4"
-                android:layout_margin="6dp"
-                android:text="TECHNOLOGY"/>
-            <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:backgroundTint="@color/black"
+                android:fontFamily="@font/montserrat"
+                android:text="TECHNOLOGY" />
+
+            <Button
                 android:id="@+id/btn_5"
-                android:layout_margin="6dp"
-                android:text="HEALTH"/>
-            <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:backgroundTint="@color/black"
+                android:fontFamily="@font/montserrat"
+                android:text="HEALTH" />
+
+            <Button
                 android:id="@+id/btn_6"
-                android:layout_margin="6dp"
-                android:text="ENTERTAINMENT"/>
-            <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/btn_7"
                 android:layout_margin="6dp"
-                android:text="SCIENCE"/>
+                android:backgroundTint="@color/black"
+                android:fontFamily="@font/montserrat"
+                android:text="ENTERTAINMENT" />
+
+            <Button
+                android:id="@+id/btn_7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:backgroundTint="@color/black"
+                android:fontFamily="@font/montserrat"
+                android:text="SCIENCE" />
         </LinearLayout>
     </HorizontalScrollView>
 
@@ -87,21 +107,23 @@
         android:indeterminate="true"
         android:id="@+id/progress_line"/>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/news_recyclerView"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="563dp" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <FrameLayout
-        android:id="@+id/frame_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/news_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="563dp" />
 
-    </FrameLayout>
+        <FrameLayout
+            android:id="@+id/frame_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-
-
-
+        </FrameLayout>
+    </LinearLayout>
 
 
 </LinearLayout>

@@ -21,6 +21,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import java.util.Collections;
+import java.util.Comparator;
+
 public class NewsRecyclerAdapter extends RecyclerView.Adapter<NewsRecyclerAdapter.NewsHolder> {
 
     private List<Article> articleList;
@@ -121,6 +124,16 @@ public class NewsRecyclerAdapter extends RecyclerView.Adapter<NewsRecyclerAdapte
         articleList.clear();
         articleList.addAll(data);
         initializelikecounts();
+        // sorts by greatest amount of likes
+        Collections.sort(articleList, new Comparator<Article>(){
+            @Override
+            public int compare(Article x, Article y) {
+                return likecounts.get(y.getUrl()).compareTo(likecounts.get(x.getUrl()));
+            }
+        });
+
+        notifyDataSetChanged();
+
     }
 
     @Override

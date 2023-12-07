@@ -25,6 +25,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -53,10 +55,14 @@ public class AccountFragment extends Fragment {
     private ImageView profilepicture, signout_button, likes, goback;
     private Uri selectedImage;
 
+    private CheckBox genenral_checkbox, business_checkbox, sports_checkbox, tech_checkbox, health_checkbox, entertainment_checkbox, science_checkbox;
+
     RecyclerView recyclerView;
     List<Article> articleList = new ArrayList<>();
     NewsRecyclerAdapter adapter;
     LinearProgressIndicator progressIndicator;
+
+    String categories = "";
 
 
 
@@ -77,6 +83,15 @@ public class AccountFragment extends Fragment {
         signout_button = view.findViewById(R.id.sign_out_button);
         likes = view.findViewById(R.id.likelist);
         goback = view.findViewById(R.id.exit_button);
+
+        //finding Checkbox through their unique IDs
+        genenral_checkbox = view.findViewById(R.id.checkbox_general);
+        business_checkbox = view.findViewById(R.id.checkbox_business);
+        sports_checkbox = view.findViewById(R.id.checkbox_sports);
+        tech_checkbox = view.findViewById(R.id.checkbox_tech);
+        health_checkbox = view.findViewById(R.id.checkbox_health);
+        entertainment_checkbox = view.findViewById(R.id.bcheckbox_entertainment);
+        science_checkbox = view.findViewById(R.id.checkbox_science);
 
 
         //sets the textviews to the user's current email and UID
@@ -124,6 +139,97 @@ public class AccountFragment extends Fragment {
         goback.setOnClickListener(v -> {
             recyclerView.setVisibility(View.INVISIBLE);
             goback.setVisibility(View.INVISIBLE);
+        });
+
+        genenral_checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(genenral_checkbox.isChecked()==true) {
+                    categories += "general";
+                    Log.d("CHECKBOX", categories);
+                } else {
+                    categories = categories.replace("general", "");
+                    Log.d("CHECKBOX UNCHECKED", categories);
+                }
+            }
+        });
+
+        business_checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(business_checkbox.isChecked()==true) {
+                    categories += "business";
+                    Log.d("CHECKBOX", categories);
+                } else {
+                    categories = categories.replace("business", "");
+                    Log.d("CHECKBOX UNCHECKED", categories);
+                }
+            }
+        });
+
+        sports_checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(sports_checkbox.isChecked()==true) {
+                    categories += "sports";
+                    Log.d("CHECKBOX", categories);
+                } else {
+                    categories = categories.replace("sports", "");
+                    Log.d("CHECKBOX UNCHECKED", categories);
+                }
+            }
+        });
+
+        tech_checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                categories += "technology";
+                if(tech_checkbox.isChecked()==true) {
+                    Log.d("CHECKBOX", categories);
+                } else {
+                    categories = categories.replace("technology", "");
+                    Log.d("CHECKBOX UNCHECKED", categories);
+                }
+            }
+        });
+
+        health_checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(health_checkbox.isChecked()==true) {
+                    categories += "health";
+                    Log.d("CHECKBOX", categories);
+                } else {
+                    categories = categories.replace("health", "");
+                    Log.d("CHECKBOX UNCHECKED", categories);
+                }
+            }
+        });
+
+        entertainment_checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(entertainment_checkbox.isChecked()==true) {
+                    categories += "entertainment";
+                    Log.d("CHECKBOX", categories);
+                } else {
+                    categories = categories.replace("entertainment", "");
+                    Log.d("CHECKBOX UNCHECKED", categories);
+                }
+            }
+        });
+
+        science_checkbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(science_checkbox.isChecked()==true) {
+                    categories += "science";
+                    Log.d("CHECKBOX", categories);
+                } else {
+                    categories = categories.replace("science", "");
+                    Log.d("CHECKBOX UNCHECKED", categories);
+                }
+            }
         });
 
     }

@@ -18,11 +18,108 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat"
+        android:text="Select your Tags: "
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/horizontal_btns"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/likelist" />
+
+    <HorizontalScrollView
+        android:id="@+id/horizontal_btns"
+        android:layout_width="284dp"
+        android:layout_height="73dp"
+        android:layout_margin="4dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/sign_out_button"
+        app:layout_constraintEnd_toEndOf="@+id/cardView"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="@+id/cardView"
+        app:layout_constraintTop_toBottomOf="@+id/likelist"
+        app:layout_constraintVertical_bias="0.708">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkbox_general"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:backgroundTint="@color/black"
+                android:fontFamily="@font/montserrat"
+                android:text="GENERAL" />
+
+            <CheckBox
+                android:id="@+id/checkbox_business"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:backgroundTint="@color/black"
+                android:fontFamily="@font/montserrat"
+                android:text="Business" />
+
+            <CheckBox
+                android:id="@+id/checkbox_sports"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:backgroundTint="@color/black"
+                android:fontFamily="@font/montserrat"
+                android:text="Sports" />
+
+            <CheckBox
+                android:id="@+id/checkbox_tech"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:backgroundTint="@color/black"
+                android:fontFamily="@font/montserrat"
+                android:text="Technology" />
+
+            <CheckBox
+                android:id="@+id/checkbox_health"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:backgroundTint="@color/black"
+                android:fontFamily="@font/montserrat"
+                android:text="Health" />
+
+            <CheckBox
+                android:id="@+id/bcheckbox_entertainment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:backgroundTint="@color/black"
+                android:fontFamily="@font/montserrat"
+                android:text="Entertainment" />
+
+            <CheckBox
+                android:id="@+id/checkbox_science"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:backgroundTint="@color/black"
+                android:fontFamily="@font/montserrat"
+                android:text="Science" />
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
     <ImageButton
         android:id="@+id/sign_out_button"
         android:layout_width="110dp"
         android:layout_height="64dp"
-        android:layout_marginTop="256dp"
+        android:layout_marginTop="312dp"
         android:backgroundTint="@android:color/transparent"
         android:src="@drawable/sign_out_button"
         app:layout_constraintEnd_toEndOf="@+id/cardView"
@@ -92,16 +189,6 @@
 
     </androidx.cardview.widget.CardView>
 
-    <ImageView
-        android:id="@+id/likelist"
-        android:layout_width="124dp"
-        android:layout_height="45dp"
-        android:layout_marginBottom="184dp"
-        android:src="@drawable/home_like_button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/cardView"
-        app:layout_constraintStart_toStartOf="@+id/cardView"
-        tools:visibility="visible" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/news_recyclerView"
@@ -111,6 +198,17 @@
         android:background="@drawable/blank_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/likelist"
+        android:layout_width="124dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="200dp"
+        android:src="@drawable/home_like_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/cardView"
+        app:layout_constraintStart_toStartOf="@+id/cardView"
+        tools:visibility="visible" />
 
     <ImageView
         android:id="@+id/exit_button"

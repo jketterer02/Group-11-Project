@@ -1,5 +1,7 @@
-1.The folder "Group-11-Project" is put into the StudioProjects folder of your android studio.
+<u>Project Instructions</u>
 
-2.There will be a box that says that the directory is not exactly right, click "ok" on that notification
+1. Drop "Group-11-Project" into the StudioProjects folder of your Android Studio
 
-3.Run the project
+2. There will be a notification that the directory is not exactly correct, click "ok" on that notification
+
+3. Run the project
